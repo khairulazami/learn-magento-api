@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config>
+    <api2>
+        <resource_groups>
+            <bilna_rest translate="title" module="Bilna_Rest">
+                <title>Bilna Rest</title>
+            </bilna_rest>
+        </resource_groups>
+        <resources>
+            <review translate="title" module="Bilna_Rest">
+                <group>bilna_rest</group>
+                <model>bilna_rest/api2_review</model>
+                <title>Review</title>
+                <sort_order>40</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <update>0</update>
+                        <delete>0</delete>
+                    </admin>
+                </privileges>
+                <attributes translate="nickname email summary review ratings title detail created_at votes total_record" module="Bilna_Rest">
+                    <nickname>Nickname</nickname>
+                    <email>Email</email>
+                    <customer_id>Customer ID</customer_id>
+                    <summary>Summary</summary>
+                    <review>Review</review>
+                    <ratings>Ratings</ratings>
+                    <title>Title</title>
+                    <detail>Detail</detail>
+                    <created_at>Created_at</created_at>
+                    <votes>Votes</votes>
+                    <total_record>Total Record</total_record>
+                </attributes>
+                <exclude_attributes>
+                    <admin>
+                        <write>
+                            <created_at>Created_at</created_at>
+                            <votes>Votes</votes>
+                        </write>
+                        <read>
+                            <email>Email</email>
+                            <customer_id>Customer ID</customer_id>
+                            <summary>Summary</summary>
+                            <review>Review</review>
+                            <ratings>Ratings</ratings>
+                        </read>
+                    </admin>
+                </exclude_attributes>
+                <routes>
+                    <route_entity>
+                        <route>/reviews/:id</route>
+                        <action_type>entity</action_type>
+                    </route_entity>
+                    <route_collection>
+                        <route>/reviews</route>
+                        <action_type>collection</action_type>
+                    </route_collection>
+                </routes>
+                <versions>1</versions>
+            </review>
+        </resources>
+    </api2>
+</config>
